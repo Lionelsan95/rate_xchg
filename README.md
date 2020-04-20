@@ -2,7 +2,7 @@
 Applications that integrate rate exchange from European Central Bank API, and manage cache with Redis
 
 Requirement : 
-- php >=v7.*
+- php >=v7.3.11
 - mysql >=v5.0.*
 - Install Redis on your computer 
 
