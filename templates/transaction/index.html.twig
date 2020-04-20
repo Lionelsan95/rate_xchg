@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Transaction index{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-table.min.css') }}" >
+    <!--<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">-->
+{% endblock %}
+
+{% block body %}
+
+    <br/>
+    <h1>Transaction index</h1>
+
+    <br/><a class="btn btn-primary" href="{{ path('transaction_new') }}">Create new</a><br/><br/>
+    <input id="url" value="{{ path('transaction_list') }}" type="hidden"/>
+
+    <table  id="transactions" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Method</th>
+                <th>Type</th>
+                <th>Base amount</th>
+                <th>Base currency</th>
+                <th>Target amount</th>
+                <th>Target currency</th>
+                <th>Exchange rate</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!--<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>-->
+    <script src="{{ asset('js/bootstrap-table.min.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
+{% endblock %}

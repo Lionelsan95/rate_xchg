@@ -1,0 +1,29 @@
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                dbname:         'rate_xchg'
+                user:           'root'
+                password:       'cpLurB1c9G3RvWZY'
+                host:           '127.0.0.1'
+                driver:         'pdo_mysql'
+                server_version: '5.0.12'
+        #url: '%env(resolve:DATABASE_URL)%'
+
+        # IMPORTANT: You MUST configure your server version,
+        # either here or in the DATABASE_URL env var (see .env file)
+        #server_version: '5.7'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
+        #metadata_cache_driver: redis
+        #query_cache_driver: redis

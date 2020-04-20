@@ -1,0 +1,23 @@
+
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.method }}</td>
+                <td>{{ transaction.trType }}</td>
+                <td>{{ transaction.bamount }}</td>
+                <td>{{ transaction.tamount }}</td>
+                <td>{{ transaction.xrate }}</td>
+                <td>
+                    <a href="{{ path('transaction_show', {'id': transaction.id}) }}" class="btn btn-info">
+                        <i class="fa fa-eye" aria-hidden="true"></i>show
+                    </a>
+                    <a href="{{ path('transaction_edit', {'id': transaction.id}) }}"  class="btn btn-info">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>edit
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}

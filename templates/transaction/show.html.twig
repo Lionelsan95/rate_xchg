@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Transaction{% endblock %}
+
+{% block body %}
+
+    <br/><h1>Transaction</h1><br/>
+
+    <a href="{{ path('transaction_index') }}" class="btn btn-info">
+        <i class="fa fa-list" aria-hidden="true"></i> back to list
+    </a>
+
+    <a href="{{ path('transaction_edit', {'id': transaction.id}) }}" class="btn btn-info">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>edit
+    </a><br/><br/>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ transaction.id }}</td>
+            </tr>
+            <tr>
+                <th>Method</th>
+                <td>{{ transaction.method }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ transaction.trType }}</td>
+            </tr>
+            <tr>
+                <th>Base amount</th>
+                <td>{{ transaction.bamount }}</td>
+            </tr>
+            <tr>
+                <th>Base currency</th>
+                <td>{{ transaction.bcurr }}</td>
+            </tr>
+            <tr>
+                <th>Target amount</th>
+                <td>{{ transaction.tamount }}</td>
+            </tr>
+            <tr>
+                <th>Target currency</th>
+                <td>{{ transaction.tcurr }}</td>
+            </tr>
+            <tr>
+                <th>Xrate</th>
+                <td>{{ transaction.xrate }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('transaction/_delete_form.html.twig') }}
+{% endblock %}
