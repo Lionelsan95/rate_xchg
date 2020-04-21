@@ -44,8 +44,8 @@ class TransactionController extends AbstractController
             ->createQuery(
                 'select t from App:Transaction t where t.state = 1'
             );
-        $query->useResultCache(true);
-        $query->setResultCacheLifetime(300); //300sec = 5 mins
+       /* $query->useResultCache(true);
+        $query->setResultCacheLifetime(300); //300sec = 5 mins*/
         $transactions = $query->getResult();
 
         $i=1;
