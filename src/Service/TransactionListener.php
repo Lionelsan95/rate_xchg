@@ -18,16 +18,16 @@ class TransactionListener
 
     public function postPersist(Transaction $transaction, LifecycleEventArgs $args)
     {
-        $this->cacheDriver->expire('[App\\Entity\\Transaction$CLASSMETADATA][1]', 0);
+        $this->cacheDriver->expire('[App\Entity\Transaction$CLASSMETADATA][1]', 0);
     }
 
     public function postUpdate(Transaction $transaction, LifecycleEventArgs $args)
     {
-        $this->cacheDriver->expire('[App\\Entity\\Transaction$CLASSMETADATA][1]', 0);
+        $this->cacheDriver->expire('[App\Entity\Transaction$CLASSMETADATA][1]', 0);
     }
 
     public function postRemove(Transaction $transaction, LifecycleEventArgs $args)
     {
-        $this->cacheDriver->expire('[App\\Entity\\Transaction$CLASSMETADATA][1]', 0);
+        $this->cacheDriver->expire('[App\Entity\Transaction$CLASSMETADATA][1]', 0);
     }
 }

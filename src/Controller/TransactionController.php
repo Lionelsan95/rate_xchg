@@ -45,7 +45,7 @@ class TransactionController extends AbstractController
                 'select t from App:Transaction t where t.state = 1'
             );
         $query->useResultCache(true);
-        $query->setResultCacheLifetime(3600); //3600sec = 1 hour
+        $query->setResultCacheLifetime(300); //300sec = 5 mins
         $transactions = $query->getResult();
 
         $i=1;
@@ -88,7 +88,7 @@ class TransactionController extends AbstractController
         // We check if this this request has already been process
         if(!$rp = unserialize($this->cache->get($id))){
             $rp = $client->getAPI($url, 'GET', $options);
-            $this->cache->set($id, serialize($rp), 'ex', 86400);
+            $this->cache->set($id, serialize($rp), 'ex', 300);
         }
 
         return $this->json( $rp['rates'][$target] );
