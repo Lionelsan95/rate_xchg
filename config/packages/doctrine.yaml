@@ -2,13 +2,19 @@ doctrine:
     dbal:
         default_connection: default
         connections:
-            default:
+            heroku:
                 dbname:         'rate_xchg'
                 user:           'root'
                 password:       'cpLurB1c9G3RvWZY'
                 host:           '127.0.0.1'
                 driver:         'pdo_mysql'
                 server_version: '5.0.12'
+            default:
+                dbname:         'mvjx31mjoqko0j9c'
+                user:           'lv5pw2jh45dcxg3s'
+                password:       'zejic9u6ti8i57y2'
+                host:           'etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+                driver:         'pdo_mysql'
         #url: '%env(resolve:DATABASE_URL)%'
 
         # IMPORTANT: You MUST configure your server version,

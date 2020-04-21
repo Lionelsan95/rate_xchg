@@ -11,18 +11,28 @@ snc_redis:
             alias: doctrine
             #dsn: redis://127.0.0.1
             dsn: redis://h:p90c3eb34062c45b0002151a75b82a52a36019fec290b03f0263f7818b679e273@ec2-54-158-214-76.compute-1.amazonaws.com:14089
+#    doctrine:
+#        metadata_cache:
+#            client: doctrine
+#            entity_manager: default
+#            document_manager: default
+#        result_cache:
+#            client: doctrine
+#            entity_manager: default
+#        query_cache:
+#            client: doctrine
+#            entity_manager: default
     doctrine:
         metadata_cache:
             client: doctrine
-            entity_manager: default
+            entity_manager: heroku
             document_manager: default
         result_cache:
             client: doctrine
-            entity_manager: default
+            entity_manager: heroku
         query_cache:
             client: doctrine
-            entity_manager: default
-
+            entity_manager: heroku
 # Define your clients here. The example below connects to database 0 of the default Redis server.
 #
 # See https://github.com/snc/SncRedisBundle/blob/master/Resources/doc/index.md for instructions on
