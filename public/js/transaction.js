@@ -6,8 +6,8 @@ $(document).ready(function (){
         if( ( $("#transaction_bcurr").val() != $("#transaction_tcurr").val() ) && parseFloat($("#transaction_bamount").val()) > 0.0) {
             var $base = $("#transaction_bcurr").val(), $target = $("#transaction_tcurr").val();
             var $rate, $val = parseFloat($("#transaction_bamount").val());
-
-            $.post("http://127.0.0.1:8000/transaction/getrate/" + $base + "/" + $target).done(function (data) {
+            var $url = window.location.hostname + "/transaction/getrate/" + $base + "/" + $target;
+            $.post($url).done(function (data) {
                 $rate = parseFloat(data);
                 $("#transaction_xrate").val(data);
                 $("#transaction_tamount").val($rate * $val);
