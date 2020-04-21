@@ -10,6 +10,7 @@
         "psr/http-client": "^1.0",
         "sensio/framework-extra-bundle": "^5.5",
         "snc/redis-bundle": "^3.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.0.*",
         "symfony/console": "5.0.*",
         "symfony/dotenv": "5.0.*",
@@ -81,7 +82,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "5.0.*"
         }
     }
