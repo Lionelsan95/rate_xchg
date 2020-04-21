@@ -3,12 +3,14 @@ snc_redis:
         default:
             type: predis
             alias: default
-            dsn: redis://127.0.0.1 # (*)
+            #dsn: redis://127.0.0.1 # (*)
+            dsn: redis://ec2-54-158-214-76.compute-1.amazonaws.com:14089 # (*)
             logging: '%kernel.debug%'
         doctrine:
             type: predis
             alias: doctrine
-            dsn: redis://127.0.0.1
+            #dsn: redis://127.0.0.1
+            dsn: redis://ec2-54-158-214-76.compute-1.amazonaws.com:14089
     doctrine:
         metadata_cache:
             client: doctrine
