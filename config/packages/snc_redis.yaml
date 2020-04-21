@@ -4,13 +4,13 @@ snc_redis:
             type: predis
             alias: default
             #dsn: redis://127.0.0.1 # (*)
-            dsn: redis://ec2-54-158-214-76.compute-1.amazonaws.com:14089 # (*)
+            dsn: redis://h:p90c3eb34062c45b0002151a75b82a52a36019fec290b03f0263f7818b679e273@ec2-54-158-214-76.compute-1.amazonaws.com:14089 # (*)
             logging: '%kernel.debug%'
         doctrine:
             type: predis
             alias: doctrine
             #dsn: redis://127.0.0.1
-            dsn: redis://ec2-54-158-214-76.compute-1.amazonaws.com:14089
+            dsn: redis://h:p90c3eb34062c45b0002151a75b82a52a36019fec290b03f0263f7818b679e273@ec2-54-158-214-76.compute-1.amazonaws.com:14089
     doctrine:
         metadata_cache:
             client: doctrine
