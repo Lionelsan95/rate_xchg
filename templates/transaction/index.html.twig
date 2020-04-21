@@ -2,11 +2,13 @@
 
 {% block title %}Transaction index{% endblock %}
 
-{% block stylesheet %}
+{% block stylesheets %}
     {{ parent() }}
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-table.min.css') }}" >
-    <!--<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">-->
+    {% if app.environment == "dev" %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-table.min.css') }}" >
+    {% else %}
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">
+    {% endif %}
 {% endblock %}
 
 {% block body %}
@@ -38,7 +40,10 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <!--<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>-->
-    <script src="{{ asset('js/bootstrap-table.min.js') }}"></script>
+    {% if app.environment == "dev" %}
+        <script src="{{ asset('js/bootstrap-table.min.js') }}"></script>
+    {% else %}
+        <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>
+    {% endif %}
     <script src="{{ asset('js/index.js') }}"></script>
 {% endblock %}
