@@ -6,7 +6,7 @@ $(document).ready(function (){
         if( ( $("#transaction_bcurr").val() != $("#transaction_tcurr").val() ) && parseFloat($("#transaction_bamount").val()) > 0.0) {
             var $base = $("#transaction_bcurr").val(), $target = $("#transaction_tcurr").val();
             var $rate, $val = parseFloat($("#transaction_bamount").val());
-            var $url = "/getrate/" + $base + "/" + $target;
+            var $url = "/transaction/getrate/" + $base + "/" + $target;
             $.post($url).done(function (data) {
                 $rate = parseFloat(data);
                 $("#transaction_xrate").val(data);
